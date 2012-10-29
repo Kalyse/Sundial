@@ -37,11 +37,15 @@
 // http://astro.unl.edu/classaction/animations/coordsmotion/daylighthoursexplorer.html
 // http://www.neoprogrammics.com/nutations/Nutation_In_Longitude_And_RA.php
 (function (factory) {
-    if (typeof define === 'function' && define.amd && dojo ) {
+    if (typeof define === 'function' && define.amd ) {
         // AMD. Register as module
-        define(["dojo/_base/declare"], function(declare){
-            return declare( "my.calc.Sun", null, factory());
-        });
+        if(typeof dojo === 'object') {
+            define(["dojo/_base/declare"], function(declare){
+                return declare( "my.calc.Sun", null, factory());
+            });
+        } else {
+            define( 'Sundial', null, factory());
+        }
     } else {
         Sun = new factory();
     }
