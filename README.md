@@ -29,12 +29,44 @@ Because of this, if you are checking the hours of sunlight for consecutive years
 Loading Via Normal Script Tags
 ------------------------------
 
+You can load Sundial normally, by just including the script to your page. It automatically creates a single global object called Sun.
+
 ```
-  <script type="text/javascript" src="/path/to/Sun.js"></script>
-  <script type="text/javascript">
+<script type="text/javascript" src="/path/to/Sun.js"></script>
+<script type="text/javascript">
      Sun.date =  new Date(2012, 5, 21);
      Sun.getDaylightHours( 50 ); // Returns 16.15
-  </script>
+</script>
 
 ```
 
+Available Methods
+-----------------
+
+**The Two Main Methods**
+
+Both of these functions take a target latitude. If no date has been set, then they will use the current locale date.
+You can select a new date, by using `Sun.date =  new Date(2012, 5, 21);`
+
+`getTotalDaylightHoursInYear(/* latitude */ lat )`
+
+`getDaylightHours(/* latitude */ lat )`
+
+
+--------------------
+
+**Other Helper and pseudo-private Methods**
+
+- `getDate()` / `setDate()` Takes a `Date()` object.
+- `getJulianDays()` Returns the Julian Days passed based on the current `Sun.date`
+- `getEquationOfTime()`  - The equation of time is the difference between apparent solar time and mean solar time. 
+- `_getRightAscension(/* Time Factor */ T)`
+- `_getSunsMeanLongitude(/* Time Factor */ T)` - Calculate the Mean Longitude of the Sun
+- `_getDeltaPSI(/* Time Factor */ T)` - Returns the nutation in ecliptical longitude expressed in degrees.
+- `_getObliquity(/* Time Factor */ T)` - Calculate Earths Obliquity Nutation
+
+
+---------------------
+
+
+Any questions, or bugs observed, please let me know. 

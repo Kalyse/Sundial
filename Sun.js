@@ -51,7 +51,14 @@
     }
 }(function () {   
     return {
-        date : new Date(),       
+        date : new Date(),  
+        getDate : function(){
+          return this.date;  
+        },
+        setDate : function(d){
+          this.date = d;
+          return this;
+        },
         getJulianDays: function(){
             this._julianDays = Math.floor(( this.date / 86400000) - ( this.date.getTimezoneOffset() / 1440) + 2440587.5);
             return this._julianDays;
