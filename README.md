@@ -7,7 +7,7 @@ Sundial, can be used with any AMD compatibile loader, Dojo, or as a standalone m
 
 Loading Via an AMD Loader
 -------------------------
-```
+```javascript
 require(["Sundial"], function(Sun){
          var s = new Sun();       
          s.date = new Date(2012, 5, 21); // 2012 is a leap year
@@ -31,7 +31,7 @@ Loading Via Normal Script Tags
 
 You can load Sundial normally, by just including the script to your page. It automatically creates a single global object called Sun.
 
-```
+```javascript
 <script type="text/javascript" src="/path/to/Sun.js"></script>
 <script type="text/javascript">
      Sun.date =  new Date(2012, 5, 21);
@@ -57,7 +57,7 @@ You can select a new date, by using `Sun.date =  new Date(2012, 5, 21);`
 
 **Other Helper and pseudo-private Methods**
 
-- `getDate()` / `setDate()` Takes a `Date()` object.
+- `getDate()` / `setDate( /* Date() */ date )
 - `getJulianDays()` Returns the Julian Days passed based on the current `Sun.date`
 - `getEquationOfTime()`  - The equation of time is the difference between apparent solar time and mean solar time. 
 - `_getRightAscension(/* Time Factor */ T)`
