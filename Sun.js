@@ -1,4 +1,31 @@
-// Credit and References
+/* 
+ * Copyright (c) 2012, Chris Acky
+ * All rights reserved.
+ * 
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+    * Neither the name of the <organization> nor the
+      names of its contributors may be used to endorse or promote products
+      derived from this software without specific prior written permission.
+
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL <COPYRIGHT HOLDER> BE LIABLE FOR ANY
+ * DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+/*  Credit and References */
 // http://lexikon.astronomie.info/zeitgleichung/   EOT 
 // http://articles.adsabs.harvard.edu/cgi-bin/nph-iarticle_query?bibcode=1989MNRAS.238.1529H&db_key=AST&page_ind=2&plate_select=NO&data_type=GIF&type=SCREEN_GIF&classic=YES
 // http://code.google.com/p/eesim/source/browse/trunk/EnergySim/src/sim/_environment.py?spec=svn6&r=6
@@ -19,12 +46,7 @@
     }
 }(function () {   
     return {
-        date : new Date(),
-        _julianDays : null, 
-        _sunDeclination : null, // declination is one of the two direction coordinates of a point on the celestial sphere in the equatorial coordinate system
-        _eot : null, // The equation of time is the difference between apparent solar time and mean solar time
-        _lat : null, // The lat that you are tracking
-        _daylightHours : null, // Daylight Hours is the time between sunrise and culmination (daylight)
+        date : new Date(),       
         getJulianDays: function(){
             this._julianDays = Math.floor(( this.date / 86400000) - ( this.date.getTimezoneOffset() / 1440) + 2440587.5);
             return this._julianDays;
