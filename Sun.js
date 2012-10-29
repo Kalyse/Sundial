@@ -1,5 +1,6 @@
 /* 
- * Copyright (c) 2012, Chris Acky
+ * Copyright (c) 2012, Chris Acky 
+ * Sundial https://github.com/Kalyse/Sundial
  * All rights reserved.
  * 
  * Redistribution and use in source and binary forms, with or without
